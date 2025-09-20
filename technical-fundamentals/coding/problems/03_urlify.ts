@@ -4,6 +4,16 @@
 // You may assume that the string has sufficient space at the end to hold the additional characters,
 // and that you are given the "true" length of the string.
 
-export default function URLify (s1 : string): string {
+export default function URLify(s1: string): string {
+  let url: string = "";
 
+  for (let i = 0; i < s1.length; i++) {
+    if (s1[i] == " ") {
+      url += "%20";
+    } else {
+      url += s1[i];
+    }
+  }
+
+  return url;
 }
